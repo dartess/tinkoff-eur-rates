@@ -7,6 +7,7 @@ const router = new Router();
 
 const prices = [];
 const MAX_ITEMS = 24 * 60;
+const INTERVAL = 60 * 1000;
 
 setInterval(
     async () => {
@@ -19,7 +20,7 @@ setInterval(
         prices.push({ date, price });
         prices.length = Math.min(MAX_ITEMS, prices.length);
     },
-    1000
+    INTERVAL
 )
 
 router.get('/all', (ctx, next) => {
