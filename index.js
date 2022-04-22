@@ -7,7 +7,7 @@ const router = new Router();
 
 const prices = [];
 const MAX_ITEMS = 24 * 60;
-const INTERVAL = 60 * 1000;
+const INTERVAL = 20 * 1000;
 
 setInterval(
     async () => {
