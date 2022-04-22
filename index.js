@@ -15,7 +15,7 @@ setInterval(
         let price = -1;
         try {
             const { payload: { rates } } = await got.get('https://api.tinkoff.ru/v1/currency_rates?from=EUR&to=RUB').json();
-            price = rates.find(rate => rate.category === 'DebitCardsOperations').buy;
+            price = rates.find(rate => rate.category === 'OPSRateGroup').buy;
         } catch {}
         prices.push({ date, price });
         prices.length = Math.min(MAX_ITEMS, prices.length);
