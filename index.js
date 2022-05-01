@@ -1,7 +1,7 @@
 import Koa from 'koa';
 import Router from '@koa/router';
 import got from 'got';
-import {get, insert} from "./db/methods.js";
+import {getDay, getWeek, insert} from "./db/methods.js";
 
 const app = new Koa();
 const router = new Router();
@@ -52,8 +52,13 @@ const getCurrentRate = async () => {
     }, delayBeforeRunInterval);
 })();
 
-router.get('/all', async (ctx, next) => {
-    ctx.body = await get();
+router.get('/day', async (ctx, next) => {
+    ctx.body = await getDay();
+    return next();
+});
+
+router.get('/week', async (ctx, next) => {
+    ctx.body = await getWeek();
     return next();
 });
 
