@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node .",
+    "initDb": "node db/initDb.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +15,8 @@
   "dependencies": {
     "@koa/router": "^10.1.1",
     "got": "^12.0.3",
-    "koa": "^2.13.4"
+    "koa": "^2.13.4",
+    "sqlite": "^4.1.1",
+    "sqlite3": "^5.0.6"
   }
 }
