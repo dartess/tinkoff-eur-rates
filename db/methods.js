@@ -10,12 +10,12 @@ const insert = async (date, price) => {
 
 const getDay = async () => {
     const db = await getDb();
-    return db.all('SELECT * FROM rates ORDER BY date ASC LIMIT 24');
+    return db.all('SELECT * FROM rates ORDER BY date DESC LIMIT 24');
 }
 
 const getWeek = async () => {
     const db = await getDb();
-    return db.all('SELECT * FROM rates ORDER BY date ASC LIMIT 168');
+    return db.all('SELECT * FROM rates ORDER BY date DESC LIMIT 168');
 }
 
 export {
