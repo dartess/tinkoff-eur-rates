@@ -18,8 +18,20 @@ const getWeek = async () => {
     return db.all('SELECT * FROM rates ORDER BY date DESC LIMIT 168');
 }
 
+const getMonth = async () => {
+    const db = await getDb();
+    return db.all('SELECT * FROM rates ORDER BY date DESC LIMIT 5208');
+}
+
+const getAll = async () => {
+    const db = await getDb();
+    return db.all('SELECT * FROM rates ORDER BY date DESC');
+}
+
 export {
     insert,
     getDay,
     getWeek,
+    getMonth,
+    getAll,
 }
