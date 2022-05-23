@@ -82,6 +82,12 @@ router.get('/last-only-price', (ctx, next) => {
     return next();
 });
 
+router.post('/refresh', async (ctx, next) => {
+    lastRate = await getCurrentRate();
+    ctx.body = lastRate;
+    return next();
+});
+
 app
     .use(router.routes())
     .use(router.allowedMethods())
