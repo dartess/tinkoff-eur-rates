@@ -20,7 +20,7 @@ const getWeek = async () => {
 
 const getMonth = async () => {
     const db = await getDb();
-    return db.all('SELECT * FROM rates ORDER BY date DESC LIMIT 5208');
+    return db.all('SELECT * FROM rates ORDER BY date DESC LIMIT 720');
 }
 
 const getAll = async () => {
